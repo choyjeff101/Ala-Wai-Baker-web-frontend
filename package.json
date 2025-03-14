@@ -1,0 +1,1 @@
+{"name":"alawaibaker","version":"0.0.1","private":true,"scripts":{"start":"node node_modules/react-native/local-cli/cli.js start"},"dependencies":{"bootstrap":"^5.3.3","react-native":"0.78.0"},"main":"index.js","keywords":[],"author":"","license":"ISC","description":""}
