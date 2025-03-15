@@ -1,11 +1,11 @@
 /* Change navigation bar background color */
 .navbar {
-    background-color: #ffef96 !important;
+    background-color: #ffef96 !important; /* Change navigation bar background color */
   }
   
-  /* Change font size of the brand name */
+/* Navbar Brand: The Ala Wai Baker */
   .navbar-brand {
-    background-color: #fff;         /* White background */
+    background-color: #fff;         /* Change navbar brand's background color = white */
     padding: 0.5em 1em;             /* Adjust padding for vertical & horizontal space */
     border-radius: 9999px;          /* Creates an oval shape */
     display: inline-block;          /* Ensures the padding and border radius apply properly */
@@ -14,5 +14,20 @@
     font-family: 'Brush Script MT', cursive;
   }
   
-  /* Additional custom styles can be added here */
+/* Homepage body */  
+  body {
+    background-color: #fff; /* This sets a light blue background */
+  }
+
+/* Subscriber email input field */  
+.input-container {
+    position: fixed;
+    top: 75vh;          /* 75% down from the top of the viewport */
+    left: 50%;          /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center the container */
+    /* Optional: add some styling for better visibility */
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
   
