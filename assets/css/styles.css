@@ -5,7 +5,13 @@
   
   /* Change font size of the brand name */
   .navbar-brand {
-    font-size: 1.50rem;
+    background-color: #fff;         /* White background */
+    padding: 0.5em 1em;             /* Adjust padding for vertical & horizontal space */
+    border-radius: 9999px;          /* Creates an oval shape */
+    display: inline-block;          /* Ensures the padding and border radius apply properly */
+    border: 2px solid #000; /* Adds a 2px black border */
+    font-size: 1.00rem;
+    font-family: 'Brush Script MT', cursive;
   }
   
   /* Additional custom styles can be added here */
