@@ -1,0 +1,12 @@
+/* Change navigation bar background color */
+.navbar {
+    background-color: #ffef96 !important;
+  }
+  
+  /* Change font size of the brand name */
+  .navbar-brand {
+    font-size: 1.50rem;
+  }
+  
+  /* Additional custom styles can be added here */
+  
