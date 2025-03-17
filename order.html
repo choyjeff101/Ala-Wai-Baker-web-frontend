@@ -11,13 +11,15 @@
   <!-- Optional: Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
+    /* Style for the navbar (if any customization is needed) */
+    
     /* Style for the photo with overlay */
     .photo-container {
       position: relative;
       display: inline-block;
     }
     .photo-container img {
-      width: 100%; /* Ensure image fills the cell */
+      width: 100%;
       height: auto;
     }
     .photo-overlay {
@@ -35,7 +37,6 @@
     .grid-row {
       border: 1px solid #000;
     }
-    /* Optional: Remove inner cell borders if any */
     .grid-row td {
       border: none;
       padding: 10px;
@@ -44,7 +45,7 @@
   </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+  <!-- Navigation Bar (from index.html) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">The Ala Wai Baker</a>
@@ -56,155 +57,159 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" onclick="window.location.href='index.html'">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="window.location.href='order.html'">Order</a>
+            <a class="nav-link active" aria-current="page" href="order.html">Order</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
   <div class="container mt-5">
-    <h1>Place Your Order</h1>
-    <!-- Existing Order Form Fields -->
-    <form id="orderForm">
-      <!-- Personal Info Section -->
-      <div class="mb-3">
-        <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
-      </div>
-      <div class="mb-3">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
-      </div>
-      <div class="mb-3">
-        <label for="phoneNumber" class="form-label">Contact Phone Number</label>
-        <div class="input-group">
-          <span class="input-group-text">+1</span>
-          <input type="tel" class="form-control" id="phoneNumber" placeholder="10-digit number" pattern="\d{10}" required>
+    <h1>Enter Your Contact Info</h1>
+    
+    <!-- Personal Info Section as a 2x2 grid -->
+    <div class="row">
+      <!-- Row 1, Column 1: First Name -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">1. First Name:</label>
+          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
         </div>
       </div>
-      <div class="mb-3">
-        <label for="pickupDate" class="form-label">Pickup Date</label>
-        <div class="input-group">
-          <input type="date" class="form-control" id="pickupDate" required>
-          <span class="input-group-text">
-            <i class="bi bi-calendar"></i>
-          </span>
+      <!-- Row 1, Column 2: Phone Number -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">3. Phone Number:</label>
+          <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter 10-digit phone number" pattern="\d{7}" required>
         </div>
       </div>
-      <div class="mb-3">
-        <label for="pickupTime" class="form-label">Pickup Time</label>
-        <input type="time" class="form-control" id="pickupTime" required>
+    </div>
+    <div class="row">
+      <!-- Row 2, Column 1: Last Name -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">2. Last Name:</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+        </div>
       </div>
-      
-      <!-- 3x4 Product Grid -->
-      <h2 class="mt-5">Choose your flavor and size. Mahalo!</h2>
-      <table class="table">
-        <tbody>
-          <!-- Row 1 -->
-          <tr class="grid-row">
-            <!-- Column 1: Photo with faded overlay label -->
-            <td>
-              <div class="photo-container">
-                <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
-                <div class="photo-overlay">The Original</div>
-              </div>
-            </td>
-            <!-- Column 2: Fullcaccia with counter -->
-            <td>
-              <strong>Fullcaccia</strong>
-              <div class="d-flex align-items-center mt-2">
-                <span>QTY: </span>
-                <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-              </div>
-            </td>
-            <!-- Column 3: Halfoccaia with counter -->
-            <td>
-              <strong>Halfoccaia</strong>
-              <div class="d-flex align-items-center mt-2">
-                <span>QTY: </span>
-                <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-              </div>
-            </td>
-            <!-- Column 4: Text input (max 250 characters) -->
-            <td>
-              <input type="text" class="form-control" maxlength="250" placeholder="Special Instructions (250 characters max)...">
-            </td>
-          </tr>
-          <!-- Row 2 -->
-          <tr class="grid-row">
-            <td>
-              <div class="photo-container">
-                <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
-                <div class="photo-overlay">The Classic</div>
-              </div>
-            </td>
-            <td>
-              <strong>Fullcaccia</strong>
-              <div class="d-flex align-items-center mt-2">
-                <span>QTY: </span>
-                <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-              </div>
-            </td>
-            <td>
-              <strong>Halfoccaia</strong>
-              <div class="d-flex align-items-center mt-2">
-                <span>QTY: </span>
-                <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-              </div>
-            </td>
-            <td>
-              <input type="text" class="form-control" maxlength="250" placeholder="Special Instructions (250 characters max)...">
-            </td>
-          </tr>
-          <!-- Row 3 -->
-          <tr class="grid-row">
-            <td>
-              <div class="photo-container">
-                <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
-                <div class="photo-overlay">The Ala Wai</div>
-              </div>
-            </td>
-            <td>
-              <strong>Fullcaccia</strong>
-              <div class="d-flex align-items-center mt-2">
-                <span>QTY: </span>
-                <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-              </div>
-            </td>
-            <td>
-              <strong>Halfoccaia</strong>
-              <div class="d-flex align-items-center mt-2">
-                <span>QTY: </span>
-                <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-              </div>
-            </td>
-            <td>
-              <input type="text" class="form-control" maxlength="250" placeholder="Special Instructions (250 characters max)...">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <!-- Submit Button for the Grid (center aligned) -->
-      <div class="text-center mt-4">
-        <button type="submit" class="btn btn-primary">Submit Order</button>
+      <!-- Row 2, Column 2: Date & Time -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Pickup Date & Time:</label>
+          <input type="date" class="form-control mb-2" id="pickupDate" required>
+          <input type="time" class="form-control" id="pickupTime" required>
+        </div>
       </div>
-    </form>
+    </div>
+    
+    <!-- 3x4 Product Grid Section -->
+    <h2 class="mt-5">Choose your flavor and size. Mahalo!</h2>
+    <table class="table">
+      <tbody>
+        <!-- Row 1 -->
+        <tr class="grid-row">
+          <!-- Column 1: Photo with faded overlay label -->
+          <td>
+            <div class="photo-container">
+              <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+              <div class="photo-overlay">Example Label</div>
+            </div>
+          </td>
+          <!-- Column 2: Fullcaccia with counter -->
+          <td>
+            <strong>Fullcaccia</strong>
+            <div class="d-flex align-items-center mt-2">
+              <span>QTY: </span>
+              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+            </div>
+          </td>
+          <!-- Column 3: Halfoccaia with counter -->
+          <td>
+            <strong>Halfoccaia</strong>
+            <div class="d-flex align-items-center mt-2">
+              <span>QTY: </span>
+              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+            </div>
+          </td>
+          <!-- Column 4: Special Requests input -->
+          <td>
+            <input type="text" class="form-control" maxlength="250" placeholder="Special Requests">
+          </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="grid-row">
+          <td>
+            <div class="photo-container">
+              <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+              <div class="photo-overlay">Example Label</div>
+            </div>
+          </td>
+          <td>
+            <strong>Fullcaccia</strong>
+            <div class="d-flex align-items-center mt-2">
+              <span>QTY: </span>
+              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+            </div>
+          </td>
+          <td>
+            <strong>Halfoccaia</strong>
+            <div class="d-flex align-items-center mt-2">
+              <span>QTY: </span>
+              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+            </div>
+          </td>
+          <td>
+            <input type="text" class="form-control" maxlength="250" placeholder="Special Requests">
+          </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="grid-row">
+          <td>
+            <div class="photo-container">
+              <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+              <div class="photo-overlay">Example Label</div>
+            </div>
+          </td>
+          <td>
+            <strong>Fullcaccia</strong>
+            <div class="d-flex align-items-center mt-2">
+              <span>QTY: </span>
+              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+            </div>
+          </td>
+          <td>
+            <strong>Halfoccaia</strong>
+            <div class="d-flex align-items-center mt-2">
+              <span>QTY: </span>
+              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+            </div>
+          </td>
+          <td>
+            <input type="text" class="form-control" maxlength="250" placeholder="Special Requests">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Submit Button for the Grid (center aligned) -->
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-primary">Submit Order</button>
+    </div>
   </div>
 
   <!-- Local Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script>
     // JavaScript for the clickable counter buttons.
-    // Each counter starts at 0, increments by 1 on click, and resets to 0 after reaching the maximum (10).
+    // Each counter starts at 0, increments by 1 on click, and resets to 0 after reaching 10.
     document.querySelectorAll('.counter-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         let current = parseInt(btn.getAttribute('data-counter'));
         const max = parseInt(btn.getAttribute('data-max'));
-        current = (current + 1) % (max + 1); // Reset to 0 after reaching max
+        current = (current + 1) % (max + 1);
         btn.setAttribute('data-counter', current);
         btn.textContent = current;
       });
