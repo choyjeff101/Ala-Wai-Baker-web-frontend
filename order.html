@@ -69,7 +69,9 @@
   
   <div class="container mt-5">
     <h1>Enter Your Contact Info</h1>
-    
+    <!-- START FORM -->
+    <form id="orderForm">
+    <input type="hidden" name="_format" value="json">
     <!-- Personal Info Section as a 2x2 grid -->
     <div class="row">
       <!-- Row 1, Column 1: First Name -->
@@ -79,26 +81,25 @@
           <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
         </div>
       </div>
-      <!-- Row 1, Column 2: Phone Number -->
-      <div class="col-md-6">
-        <div class="mb-3">
-          <label class="form-label">3. Phone Number:</label>
-          <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter 10-digit phone number" pattern="\d{7}" required>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <!-- Row 2, Column 1: Last Name -->
+      <!-- Row 1, Column 2: Last Name -->
       <div class="col-md-6">
         <div class="mb-3">
           <label class="form-label">2. Last Name:</label>
           <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
         </div>
       </div>
+    <div class="row">
+      <!-- Row 2, Column 1: Phone Number -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">3. Phone Number:</label>
+          <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter 10-digit phone number" pattern="\d{10}" required>
+        </div>
+      </div>
       <!-- Row 2, Column 2: Date & Time -->
       <div class="col-md-6">
         <div class="mb-3">
-          <label class="form-label">Pickup Date & Time:</label>
+          <label class="form-label">4. Pickup Date & Time:</label>
           <input type="date" class="form-control mb-2" id="pickupDate" required>
           <input type="time" class="form-control" id="pickupTime" required>
         </div>
@@ -198,6 +199,7 @@
     <div class="text-center mt-4">
       <button type="submit" class="btn btn-primary">Submit Order</button>
     </div>
+  </form>
   </div>
 
   <!-- Local Bootstrap JS -->
@@ -214,6 +216,43 @@
         btn.textContent = current;
       });
     });
+  </script>
+
+<!-- Collect Values & POST -->
+<script>
+  const form = document.getElementById('orderForm');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+  
+    const data = {
+      firstName: form.firstName.value,
+      lastName: form.lastName.value,
+      phone: form.phoneNumber.value,
+      pickupDate: form.pickupDate.value,
+      pickupTime: form.pickupTime.value,
+      products: Array.from(document.querySelectorAll('.grid-row')).map(row => ({
+        fullcacciaQty: Number(row.querySelectorAll('.counter-btn')[0].textContent),
+        halfoccaiaQty: Number(row.querySelectorAll('.counter-btn')[1].textContent),
+        specialRequests: row.querySelector('input[type="text"]').value.trim()
+      }))
+    };
+  
+    try {
+      const resp = await fetch('https://formspree.io/f/mldjbloj', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!resp.ok) throw new Error(await resp.text());
+      alert('Order submitted successfully!');
+      form.reset();
+      // reset counters
+      document.querySelectorAll('.counter-btn').forEach(btn => { btn.textContent = '0'; btn.dataset.counter = 0 });
+    } catch(err) {
+      alert('Error submitting order: ' + err.message);
+    }
+  });
   </script>
 </body>
 </html>
