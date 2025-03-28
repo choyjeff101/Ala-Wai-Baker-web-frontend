@@ -47,6 +47,7 @@ def create_order():
     conn.execute('PRAGMA foreign_keys = ON;')
     cur = conn.cursor()
 
+# Order insertion route:
     # 1. Insert the order data into the orders table.
     cur.execute('''
       INSERT INTO orders (firstName, lastName, phone, date, time, products)
