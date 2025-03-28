@@ -74,126 +74,116 @@
     <input type="hidden" name="_format" value="json">
     <!-- Personal Info Section as a 2x2 grid -->
     <div class="row">
-      <!-- Row 1, Column 1: First Name -->
+     
+      <!-- Row 1, Column 1: Full Name -->
       <div class="col-md-6">
         <div class="mb-3">
-          <label class="form-label">1. First Name:</label>
-          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+          <label class="form-label">1. Full Name:</label>
+          <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
         </div>
       </div>
-      <!-- Row 1, Column 2: Last Name -->
+      <!-- Row 1, Column 2: Phone Number -->
       <div class="col-md-6">
         <div class="mb-3">
-          <label class="form-label">2. Last Name:</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
-        </div>
-      </div>
-    <div class="row">
-      <!-- Row 2, Column 1: Phone Number -->
-      <div class="col-md-6">
-        <div class="mb-3">
-          <label class="form-label">3. Phone Number:</label>
+          <label class="form-label">2. Phone Number:</label>
           <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter 10-digit phone number" pattern="\d{10}" required>
         </div>
       </div>
-      <!-- Row 2, Column 2: Date & Time -->
+    <div class="row">
+      <!-- Row 2, Column 1: Date -->
       <div class="col-md-6">
         <div class="mb-3">
-          <label class="form-label">4. Pickup Date & Time:</label>
+          <label class="form-label">3. Pickup Date:</label>
           <input type="date" class="form-control mb-2" id="pickupDate" required>
+        </div>
+      </div>
+     <!-- Row 2, Column 2: Date -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">4. Pickup Time:</label>
           <input type="time" class="form-control" id="pickupTime" required>
         </div>
       </div>
-    </div>
-    
-    <!-- 3x4 Product Grid Section -->
-    <h2 class="mt-5">Choose your flavor and size. Mahalo!</h2>
-    <table class="table">
-      <tbody>
-        <!-- Row 1 -->
-        <tr class="grid-row">
-          <!-- Column 1: Photo with faded overlay label -->
-          <td>
-            <div class="photo-container">
-              <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
-              <div class="photo-overlay">Example Label</div>
-            </div>
-          </td>
-          <!-- Column 2: Fullcaccia with counter -->
-          <td>
-            <strong>Fullcaccia</strong>
-            <div class="d-flex align-items-center mt-2">
-              <span>QTY: </span>
-              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-            </div>
-          </td>
-          <!-- Column 3: Halfoccaia with counter -->
-          <td>
-            <strong>Halfoccaia</strong>
-            <div class="d-flex align-items-center mt-2">
-              <span>QTY: </span>
-              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-            </div>
-          </td>
-          <!-- Column 4: Special Requests input -->
-          <td>
-            <input type="text" class="form-control" maxlength="250" placeholder="Special Requests">
-          </td>
-        </tr>
-        <!-- Row 2 -->
-        <tr class="grid-row">
-          <td>
-            <div class="photo-container">
-              <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
-              <div class="photo-overlay">Example Label</div>
-            </div>
-          </td>
-          <td>
-            <strong>Fullcaccia</strong>
-            <div class="d-flex align-items-center mt-2">
-              <span>QTY: </span>
-              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-            </div>
-          </td>
-          <td>
-            <strong>Halfoccaia</strong>
-            <div class="d-flex align-items-center mt-2">
-              <span>QTY: </span>
-              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-            </div>
-          </td>
-          <td>
-            <input type="text" class="form-control" maxlength="250" placeholder="Special Requests">
-          </td>
-        </tr>
-        <!-- Row 3 -->
-        <tr class="grid-row">
-          <td>
-            <div class="photo-container">
-              <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
-              <div class="photo-overlay">Example Label</div>
-            </div>
-          </td>
-          <td>
-            <strong>Fullcaccia</strong>
-            <div class="d-flex align-items-center mt-2">
-              <span>QTY: </span>
-              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-            </div>
-          </td>
-          <td>
-            <strong>Halfoccaia</strong>
-            <div class="d-flex align-items-center mt-2">
-              <span>QTY: </span>
-              <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
-            </div>
-          </td>
-          <td>
-            <input type="text" class="form-control" maxlength="250" placeholder="Special Requests">
-          </td>
-        </tr>
-      </tbody>
-    </table>
+     <div class="row">
+    <!-- 3x3 Product Grid Section -->
+<h2 class="mt-5">Choose your flavor and size. Mahalo!</h2>
+<table class="table">
+  <tbody>
+    <!-- Row 1 -->
+    <tr class="grid-row">
+      <!-- Column 1: Photo with faded overlay label -->
+      <td>
+        <div class="photo-container">
+          <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+          <div class="photo-overlay">The Original</div>
+        </div>
+      </td>
+      <!-- Column 2: Fullcaccia with counter -->
+      <td>
+        <strong>Fullcaccia</strong>
+        <div class="d-flex align-items-center mt-2">
+          <span>QTY: </span>
+          <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+        </div>
+      </td>
+      <!-- Column 3: Halfoccaia with counter -->
+      <td>
+        <strong>Halfoccaia</strong>
+        <div class="d-flex align-items-center mt-2">
+          <span>QTY: </span>
+          <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+        </div>
+      </td>
+    </tr>
+    <!-- Row 2 -->
+    <tr class="grid-row">
+      <td>
+        <div class="photo-container">
+          <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+          <div class="photo-overlay">The Classic</div>
+        </div>
+      </td>
+      <td>
+        <strong>Fullcaccia</strong>
+        <div class="d-flex align-items-center mt-2">
+          <span>QTY: </span>
+          <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+        </div>
+      </td>
+      <td>
+        <strong>Halfoccaia</strong>
+        <div class="d-flex align-items-center mt-2">
+          <span>QTY: </span>
+          <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+        </div>
+      </td>
+    </tr>
+    <!-- Row 3 -->
+    <tr class="grid-row">
+      <td>
+        <div class="photo-container">
+          <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+          <div class="photo-overlay">The Ala Wai</div>
+        </div>
+      </td>
+      <td>
+        <strong>Fullcaccia</strong>
+        <div class="d-flex align-items-center mt-2">
+          <span>QTY: </span>
+          <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+        </div>
+      </td>
+      <td>
+        <strong>Halfoccaia</strong>
+        <div class="d-flex align-items-center mt-2">
+          <span>QTY: </span>
+          <button type="button" class="btn btn-secondary ms-2 counter-btn" data-counter="0" data-max="10">0</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
     
     <!-- Submit Button for the Grid (center aligned) -->
     <div class="text-center mt-4">
@@ -226,15 +216,14 @@
     e.preventDefault();
   
     const data = {
-      firstName: form.firstName.value,
-      lastName: form.lastName.value,
+      fullName: form.fullName.value,
       phone: form.phoneNumber.value,
       pickupDate: form.pickupDate.value,
       pickupTime: form.pickupTime.value,
       products: Array.from(document.querySelectorAll('.grid-row')).map(row => ({
+        productType: row.querySelector('.photo-overlay').textContent.trim(),
         fullcacciaQty: Number(row.querySelectorAll('.counter-btn')[0].textContent),
-        halfoccaiaQty: Number(row.querySelectorAll('.counter-btn')[1].textContent),
-        specialRequests: row.querySelector('input[type="text"]').value.trim()
+        halfoccaiaQty: Number(row.querySelectorAll('.counter-btn')[1].textContent)
       }))
     };
   
@@ -249,11 +238,14 @@
       alert('Order submitted successfully!');
       form.reset();
       // reset counters
-      document.querySelectorAll('.counter-btn').forEach(btn => { btn.textContent = '0'; btn.dataset.counter = 0 });
+      document.querySelectorAll('.counter-btn').forEach(btn => { 
+        btn.textContent = '0'; 
+        btn.dataset.counter = 0;
+      });
     } catch(err) {
       alert('Error submitting order: ' + err.message);
     }
   });
-  </script>
+</script>
 </body>
 </html>
