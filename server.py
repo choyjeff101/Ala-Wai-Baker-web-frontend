@@ -19,9 +19,9 @@ def init_db():
         pickupDate TEXT,
         pickupTime TEXT,
         products TEXT,
-        Received INTEGER,
-        Progressing INTEGER,
-        Done INTEGER
+        Received TEXT,
+        Progressing TEXT,
+        Done TEXT
       )
     ''')
 
