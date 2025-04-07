@@ -1,0 +1,88 @@
+/* Change navigation bar background color */
+.navbar {
+    background-color: #ffef96 !important; /* Change navigation bar background color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+/* Navbar Brand: The Ala Wai Baker */
+  .navbar-brand {
+    background-color: #fff;         /* Change navbar brand's background color = white */
+    padding: 0.5em 1em;             /* Adjust padding for vertical & horizontal space */
+    border-radius: 9999px;          /* Creates an oval shape */
+    display: inline-block;          /* Ensures the padding and border radius apply properly */
+    border: 2px solid #000; /* Adds a 2px black border */
+    font-size: 1.00rem;
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+/* Homepage body */  
+  body {
+    background-color: #fff; /* This sets a light blue background */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+/* Subscriber email input field */  
+.form-container {
+  position: fixed;
+  top: 75vh;           /* Positions the container at 75% of the viewport height */
+  left: 50%;           /* Centers the container horizontally */
+  transform: translateX(-50%); /* Offsets the container to truly center it */
+  text-align: center;  /* Center-justifies the text and inline elements */
+}
+
+.btn-primary {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+}
+
+.btn-primary:hover {
+    background-color: #34495e;
+    border-color: #34495e;
+}
+
+/* Order form styles */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #34495e;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+  
