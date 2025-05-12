@@ -41,7 +41,7 @@ def init_db():
     conn.execute('''
       CREATE TABLE IF NOT EXISTS products (
         ProductID INTEGER PRIMARY KEY,
-        ProductName TEXT,
+        ProductName TEXT UNIQUE,
         FullcacciaPrice REAL,
         HalfocacciaPrice REAL
       )

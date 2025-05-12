@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Order Form - AlaWaiBaker</title>
   <!-- Local Bootstrap CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <!-- Optional: Custom styles -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <!-- Optional: Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
@@ -45,7 +45,7 @@
   </style>
 </head>
 <body>
-  <!-- Navigation Bar (from index.html) -->
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">The Ala Wai Baker</a>
@@ -57,10 +57,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="order.html">Order</a>
+            <a class="nav-link active" aria-current="page" href="{{ url_for('main.order_page') }}">Order</a>
           </li>
         </ul>
       </div>
@@ -114,7 +114,7 @@
       <!-- Column 1: Photo with faded overlay label -->
       <td>
         <div class="photo-container">
-          <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+          <img src="{{ url_for('static', filename='images/example.jpg') }}" alt="Product Photo" class="img-fluid">
           <div class="photo-overlay">The Original</div>
         </div>
       </td>
@@ -139,7 +139,7 @@
     <tr class="grid-row">
       <td>
         <div class="photo-container">
-          <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+          <img src="{{ url_for('static', filename='images/example.jpg') }}" alt="Product Photo" class="img-fluid">
           <div class="photo-overlay">The Classic</div>
         </div>
       </td>
@@ -162,7 +162,7 @@
     <tr class="grid-row">
       <td>
         <div class="photo-container">
-          <img src="assets/images/example.jpg" alt="Product Photo" class="img-fluid">
+          <img src="{{ url_for('static', filename='images/example.jpg') }}" alt="Product Photo" class="img-fluid">
           <div class="photo-overlay">The Ala Wai</div>
         </div>
       </td>
@@ -193,7 +193,7 @@
   </div>
 
   <!-- Local Bootstrap JS -->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
   <script>
     // JavaScript for the clickable counter buttons.
     // Each counter starts at 0, increments by 1 on click, and resets to 0 after reaching 10.
@@ -228,9 +228,14 @@
     };
   
     try {
-      const resp = await fetch('http://127.0.0.1:5000/api/orders', {
+      const resp = await fetch('/api/orders', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        credentials: 'same-origin',
         body: JSON.stringify(data)
       });
       
@@ -247,11 +252,11 @@
       });
       
       // Redirect to the confirmation page
-      window.location.href = `http://127.0.0.1:5000${result.confirmation_url}`;
+      window.location.href = result.confirmation_url;
     } catch(err) {
       alert('Error submitting order: ' + err.message);
     }
   });
 </script>
 </body>
-</html>
+</html> 
